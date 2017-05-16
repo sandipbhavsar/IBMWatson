@@ -9,9 +9,44 @@
   <meta property="og:description" content="Sample application that shows how to use the Conversation API to identify user intents" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/app.css">
+<style>
+
+</style>
 </head>
 <body>
-  <div id="view-change-button" class="button" onclick="PayloadPanel.togglePanel(event, this)">
+
+
+<header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">                 
+                    <div class="index-brand-light">
+                        <img src="/img/wk-brand-small-white.svg" alt="Wolters Kluwer">
+                    </div>
+                </div>
+                <div class="titleBot">TaxWise Virtual Assistant
+                </div>
+               
+            </div>
+        </nav>
+    </header>
+
+    <div class="specialLeft">
+      <div class="specialImg" >
+                        <img src="/img/imgBot1.png" >
+        
+      </div>
+      <div class="specialText">
+        Hello, I'm TaxWise Virtual Assistant. <br/>
+I can help you with queries about:<br/>
+1. Status of return <br/>
+2. Status of refund amount <br/>
+3. Taxable refund calculation on Form 1040<br/>
+4. States allowed for e-file as state-only
+
+      </div>
+    </div>
+  <div id="view-change-button" class="button" onclick="PayloadPanel.togglePanel(event, this)" style="opacity:0;">
     <img class="option full" src="../img/Chat Button.png">
     <img class="option not-full" src="../img/Code Button.png">
   </div>
@@ -21,12 +56,12 @@
         <div id="scrollingChat"></div>
         <label for="textInput" class="inputOutline">
           <input id="textInput" class="input responsive-column"
-            placeholder="Type something" type="text"
+            placeholder="Type your question here." type="text"
             onkeydown="ConversationPanel.inputKeyDown(event, this)">
         </label>
       </div>
     </div>
-    <div id="payload-column" class="fixed-column content-column">
+    <div id="payload-column" class="fixed-column content-column" style="opacity:0;">
       <div id="payload-initial-message">
         Type something to see the output
       </div>

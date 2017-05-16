@@ -166,16 +166,16 @@ div {
   line-height: 1.3125rem;
 }
 
-.from-watson.latest .message-inner {
+/*.from-watson.latest .message-inner {
   color: #323232;
-}
+}*/
 
 .from-watson p {
   margin: 0.3125rem;
   padding: 0 1.25rem;
 }
 
-.from-watson.latest.top p:before {
+/*.from-watson.latest.top p:before {
   content: ".";
   color: #9855D4;
   background-image: url("../img/marker_image.png");
@@ -186,7 +186,7 @@ div {
   width: 0.3125rem;
   height: 1.3125rem;
   line-height: 1.3125rem;
-}
+}*/
 
 #textInput {
   border: none;
@@ -310,6 +310,190 @@ html{
   font-size: 16px;
 }
 
+
+.from-user .message-inner {
+    position: relative;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.015rem;
+    line-height: 1.3125rem;
+    background: #85BC20;
+    border-radius: 1.25rem;
+    border-bottom-right-radius: 0;
+    text-align: left;
+    display: inline-block;
+    margin-left: 3rem;
+    min-width: 2.5rem;
+}
+.from-user .message-inner:before {
+    z-index: -2;
+    bottom: -0.375rem;
+    right: 0;
+    height: 0.375rem;
+    width: 0.5rem;
+    background: #85BC20;
+}
+
+.from-watson .message-inner {
+    position: relative;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.015rem;
+    line-height: 1.3125rem;
+    background: #007AC3;
+    border-radius: 1.25rem;
+    border-bottom-left-radius: 0;
+    text-align: left;
+    display: inline-block;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    min-width: 2.5rem;
+}
+.top{
+  position: relative;
+}
+.from-watson .message-inner:before {
+    z-index: -2;
+    bottom: -0.375rem;
+    left: 0;
+    height: 0.375rem;
+    width: 0.5rem;
+    background: #007AC3;
+}
+.from-watson .message-inner:after {
+    z-index: -1;
+    bottom: -0.5rem;
+    left: 0;
+    height: 0.5rem;
+    width: 0.5rem;
+    background: #fff;
+    border-top-left-radius: 1.25rem;
+}
+.from-watson .message-inner:before, .from-watson .message-inner:after {
+    content: "";
+    position: absolute;
+}
+
+.titleBot {
+    color: white;
+    text-align: left;
+    font-size: 17px;
+    padding: 14px 20px 0px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+.navbar-default {
+    background-color: #007ac3;
+    border-color: #0065a2;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+.container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.index-brand-light {
+    padding: 0.7em;
+    background-color: #007ac3;
+}
+@media (min-width: 768px){
+    .navbar {
+        border-radius: 0;
+    }
+    .container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .navbar-header {
+        float: left;
+    }
+}
+
+#payload-column {
+    font-family: Monaco, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0;
+    line-height: 1.125rem;
+    background-color: #23292A;
+    color: #fff;
+    overflow-x: auto;
+    width: 0;
+    max-width: 32.0625rem;
+    min-width: 0rem;
+    opacity: 0;
+}
+#contentParent {
+    height: 75%;
+}
+.chat-column {
+    height: 100%;
+    padding: 0.9375rem 0 0.625rem 0;
+    margin: auto;
+    text-align: left;
+    max-width: 42rem;
+    min-width: 9.375rem;
+}
+.segments {
+  margin: 10px 0 ;
+}
+#view-change-button {
+    display: inline-block;
+    position: absolute;
+    width: 0rem;
+    height: 0rem;
+    border-radius: 1.5625rem;
+    background: #AB72F8;
+    top: 0rem;
+    right: 0rem;
+    opacity: 0;
+    line-height: 0rem;
+    vertical-align: middle;
+}
+.imgBot, .imgUser {
+    width: 40px;
+    height: 40px;
+   
+}
+.imgBot {
+    float: left;
+    border-radius: 25px;
+    position: absolute;
+}
+.imgUser {
+    float: right;
+    position: relative;
+}
+
+.specialLeft {
+    position: absolute;
+    width: 300px;
+    /* background: #85BC20; */
+    height: 370px;
+    text-align: center;
+    border: 2px solid #85BC20;
+    margin: -10px 10px 10px;
+}
+.specialImg{
+  display: inline-block;
+}
+.specialImg img {
+    height: 200px;
+}
+#chat-column-holder {
+    text-align: left;
+    margin: 0 0 0 200px;
+}
+.specialText{
+  text-align: left;
+  display: inline-block;
+  padding: 10px;
+}
 @media only screen and (max-width: 1000px) {
   html {
     font-size: 15px;

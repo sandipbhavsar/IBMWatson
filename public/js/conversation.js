@@ -130,7 +130,6 @@ var ConversationPanel = (function() {
           element.classList.remove('latest');
         });
       }
-
       messageDivs.forEach(function(currentDiv) {
         chatBoxElement.appendChild(currentDiv);
         // Class to start fade in animation
@@ -138,6 +137,7 @@ var ConversationPanel = (function() {
       });
       // Move chat to the most recent messages when new messages are added
       scrollToChatBottom();
+      setTimeout(scrollToChatBottom,200);
     }
   }
 
@@ -171,7 +171,14 @@ var ConversationPanel = (function() {
             // <div class='from-user/from-watson latest'>
             'tagName': 'div',
             'classNames': [(isUser ? 'from-user' : 'from-watson'), 'latest', ((messageArray.length === 0) ? 'top' : 'sub')],
-            'children': [{
+            'children': [
+            {
+                // img for bot or user (isUser ? 'img/aco_bot.jpg' : 'img/aco_bot.jpg')
+                'tagName': 'img',
+                'classNames': [(isUser ? 'imgUser' : 'imgBot')],
+                'attributes':[{'name':'src','value':(isUser ? 'img/imgUser.png' : 'img/logo.gif')}]
+                            },
+                            {
               // <div class='message-inner'>
               'tagName': 'div',
               'classNames': ['message-inner'],
