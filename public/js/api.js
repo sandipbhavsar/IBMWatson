@@ -1,5 +1,3 @@
-// The Api module is designed to handle all interactions with the server
-
 var Api = (function () {
     var requestPayload;
     var responsePayload;
@@ -44,20 +42,25 @@ var Api = (function () {
         http.setRequestHeader('Content-type', 'application/json');
         http.onreadystatechange = function () {
             if (http.readyState === 4 && http.status === 200 && http.responseText) {
-                if (http.responseText.search('DatabaseLookUp')>0) {
-                    var customhttp = new XMLHttpRequest();
+                if (http.responseText.search('DatabaseLookUp') > 0) {
+                    var watsonOutput = http.responseText;
+                    var jasonObject = JSON.parse(watsonOutput);
+                    jasonObject.output.text.length = 0;
+                    jasonObject.output.text.push("No return status found");
+                    Api.setResponsePayload(JSON.stringify(jasonObject));
+                    //var customhttp = new XMLHttpRequest();
 
-                    customhttp.open('GET', "http://localhost/ReturnStatusAPI/api/values/" + text, false);
-                    customhttp.onreadystatechange = function () {
-                        if (customhttp.readyState === 4 && customhttp.status === 200 && customhttp.response) {
-                            var watsonOutput = http.responseText;
-                            var jasonObject = JSON.parse(watsonOutput);
-                            jasonObject.output.text.length = 0;
-                            jasonObject.output.text.push(customhttp.response);
-                            Api.setResponsePayload(JSON.stringify(jasonObject));
-                        }
-                    };
-                    customhttp.send();
+                    //customhttp.open('GET', "http://localhost/ReturnStatusAPI/api/values/" + text, false);
+                    //customhttp.onreadystatechange = function () {
+                    //    if (customhttp.readyState === 4 && customhttp.status === 200 && customhttp.response) {
+                    //        var watsonOutput = http.responseText;
+                    //        var jasonObject = JSON.parse(watsonOutput);
+                    //        jasonObject.output.text.length = 0;
+                    //        jasonObject.output.text.push(customhttp.response);
+                    //        Api.setResponsePayload(JSON.stringify(jasonObject));
+                    //    }
+                    //};
+                    //customhttp.send();
                 }
                 else {
                     Api.setResponsePayload(http.responseText);
